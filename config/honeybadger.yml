@@ -1,2 +1,5 @@
 ---
-api_key: '82d402d0'
+api_key: 'getyours'
+env: 'production'
+breadcrumbs:
+  enabled: true

@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
 
     before_action :authenticate_request
 
+    before_action do
+        Honeybadger.context({
+            user_id: current_user.id,
+            user_email: current_user.email
+        })
+    end
+
     def current_user
         if session[:user_id]
             @current_user ||= User.find(session[:user_id])
